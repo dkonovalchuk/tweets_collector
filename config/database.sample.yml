@@ -1,0 +1,18 @@
+default: &default
+  database: word_cloud_development
+  adapter: postgresql
+  user: user
+  password: password
+  host: localhost
+  encoding: UTF-8
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: word_cloud_test
+
+production:
+  <<: *default
+  database: word_cloud_production

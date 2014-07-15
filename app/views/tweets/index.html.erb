@@ -1,0 +1,22 @@
+<h1>Listing tweets</h1>
+
+<br />
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to 'Back', query_path(@query) %>
+  </div>
+</div>
+<br />
+
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li><%= tweet %></li>
+  <% end %>
+</ul>
+
+<br />
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to 'Back', query_path(@query) %>
+  </div>
+</div>

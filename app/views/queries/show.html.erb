@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6">
+    <h1>Username: <%= @query.username %></h1>
+    <div class="row">
+      <div class="col-md-12">
+        <br />
+        <table class="table table-striped table-hover ">
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>
+                <%= link_to "Hourly Tweets", query_tweets_path(@query, period: :hourly) %> |
+                <%= link_to "Daily Tweets", query_tweets_path(@query, period: :daily) %>
+              </td>
+            </tr>
+            <tr>
+              <td>TXT</td>
+              <td>
+                <%= link_to "Hourly Tweets", query_tweets_path(@query, period: :hourly, format: :txt) %> |
+                <%= link_to "Daily Tweets", query_tweets_path(@query, period: :daily, format: :txt) %>
+              </td>
+            </tr>
+            <tr>
+              <td>JSON</td>
+              <td>
+                <%= link_to "Hourly Tweets", query_tweets_path(@query, period: :hourly, format: :json) %> |
+                <%= link_to "Daily Tweets", query_tweets_path(@query, period: :daily, format: :json) %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to 'Edit', edit_query_path(@query) %> |
+    <%= link_to 'Back', queries_path %>
+  </div>
+</div>
