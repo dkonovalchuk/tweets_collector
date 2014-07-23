@@ -21,6 +21,6 @@ class TweetsController < ApplicationController
 
   def tweets_for_query
     period = params.permit(:period).fetch(:period) { :hourly }
-    @query.tweets.public_send(period)
+    @query.tweets.public_send(period).newest_first
   end
 end

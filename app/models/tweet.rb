@@ -7,6 +7,7 @@ class Tweet < ActiveRecord::Base
   scope :since, ->(time) { where("tweet_date >= ?", time) }
   scope :hourly, -> { since(Time.now - 1.hour) }
   scope :daily, -> { since(Time.now - 24.hours) }
+  scope :newest_first, -> { order(tweet_date: :desc) }
 
   class << self
 
